@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <style>
+        #reloj{
+            font-family: sans-serif;
+            font-size: 60px;
+            text-shadow: 0px 0px 0px #3333;
+            color: #ffff;
+        }
+        .reloj-contenedor{
+            background-color: rgb(12,119,206);
+            padding: 25px;
+            max-width: 350px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 10%;
+        }
+        #fecha{
+            letter-spacing: 10px;
+            font-size: 15px;
+        }
+        .animar{
+            border: rgb(0,0,0) 2px solid;
+        }
+    </style>
+    
+</head>
+<div id="reloj"> 
+    <div class="reloj-contenedor" id="contenedor">
+        <div id="hora">Reloj Digital</div>
+        <div id="fecha">Con Javascript</div>
+
+    </div>
+
+</div>
+<body onload="reloj()">
+    <script>
+        let reloj=()=>{
+            let digitalClock=new Date()
+           //console.log(`${digitalClock.getDay}/ ${digitalClock.getMonth()}/ ${digitalClock.getFullYear()}`);
+           document.getElementById('hora').innerHTML=`${digitalClock.getHours()}: ${digitalClock.getMinutes()}: ${digitalClock.getSeconds()}`
+           document.getElementById('fecha').innerHTML=`${digitalClock.getDate()}/${digitalClock.getMonth()}/${digitalClock.getFullYear()}`
+           document.getElementById('contenedor').classList.toggle('animar')
+        } 
+
+        setInterval(reloj, 1000)
+    </script>
+</body>
+</html>
